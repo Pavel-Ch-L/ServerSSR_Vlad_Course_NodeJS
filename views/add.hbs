@@ -1,0 +1,29 @@
+<h1>Добавить курс</h1>
+{{#if error}}
+  <p class="alert">{{error}}</p>
+{{/if}}
+<form action="/add" method="post">
+  <input type="hidden" name="_csrf" value="{{csrf}}">
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="title" name="title" type="text" class="validate" value="{{data.title}}" required>
+      <label for="title">Название курса</label>
+      <span class="helper-text" data-error=""></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="price" name="price" type="number" class="validate" value="{{data.price}}" required>
+      <label for="price">Цена курса</label>
+      <span class="helper-text" data-error=""></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="img" name="img" type="text" class="validate" value="{{data.img}}" required>
+      <label for="img">Адрес картинки</label>
+      <span class="helper-text" data-error=""></span>
+    </div>
+  </div>
+  <button class="btn" type="submit">Добавить курс</button>
+</form>
